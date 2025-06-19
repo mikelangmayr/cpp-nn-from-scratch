@@ -7,7 +7,9 @@ namespace nn {
 class Tensor {
 public:
     std::vector<double> data;
-    size_t rows, cols;
+    size_t rows = 0, cols = 0;
+
+    Tensor() = default;
 
     Tensor(size_t r, size_t c, double val = 0.0)
         : data(r * c, val), rows(r), cols(c) {}
