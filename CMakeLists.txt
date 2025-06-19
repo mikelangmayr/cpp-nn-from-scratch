@@ -14,14 +14,8 @@ FetchContent_MakeAvailable(Catch2)
 
 enable_testing()
 
-add_library(nn
-  include/nn/tensor.hpp
-  include/nn/layer.hpp
-  include/nn/network.hpp
-  include/nn/activation.hpp
-  include/nn/loss.hpp
-)
-target_include_directories(nn PUBLIC include)
+add_library(nn INTERFACE)
+target_include_directories(nn INTERFACE include)
 
 add_executable(main src/main.cpp)
 target_link_libraries(main PRIVATE nn)
